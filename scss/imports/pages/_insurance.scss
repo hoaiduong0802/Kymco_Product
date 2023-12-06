@@ -1,0 +1,26 @@
+
+
+.insurancepage{
+    .post{
+        &__content{
+            h2{
+                text-align: center;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                line-height:3rem;
+                font-weight: bold;
+            }
+            h3, h4{
+                font-weight: bold;
+                line-height:3rem;
+            }
+            p{
+                margin-bottom: 20px;
+                line-height:3rem;
+                @include xs{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

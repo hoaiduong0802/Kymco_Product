@@ -1,0 +1,62 @@
+// css navigator (Menu)
+
+.menuMobile {
+    visibility: hidden;
+    @include size(100%, 0);
+    top: 0;
+    left: 0;
+    background: $red-cl;
+    z-index: 12;
+    @include transition(all .5s ease 0s);
+    opacity: 0;
+    position: relative;
+    z-index: 1111;
+    pointer-events: none;
+
+    ul {
+        width: 100%;
+        li {
+            padding: 15px 0;
+            text-align: center;
+            a {
+                @include text(1.8rem, 'UB', null, $white-cl, uppercase);
+                letter-spacing: 1px;
+                white-space: nowrap;
+                position: relative;
+                &::after{
+                    @include line(0%, 1.5px, $white-cl);
+                    bottom:-5px;
+                    left: 0;
+                    @include transition(all .3s ease 0s);
+                }
+                &:hover{
+                    &::after{
+                        width:100%;
+                        right:0;
+                        @include transition(all .3s);
+                    }
+                }
+            }
+            .content {
+                padding-top: 15px;
+                li {
+                    padding: 15px 0;
+                }
+            }
+        }
+    }
+    .ul-wrap{
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        padding-top: 100px;
+    }
+}
+
+.active-menuMobile {
+    height: 100vh;
+    visibility: visible;
+    opacity: 1;
+    @include transition(all .5s ease 0s);
+    pointer-events: auto;
+}

@@ -1,0 +1,25 @@
+
+
+.maintainPage{
+    .post{
+        &__content{
+            max-width: none;
+            padding: 0;
+        }
+    }
+    .text-main {
+        @include text(var(--body18-fs), 'U', 3rem, $black-cl, none);
+        letter-spacing: 0.4px;
+        margin: 10px 0;
+        padding: 20px 90px;
+        table td {
+            padding: 10px;
+        }
+        @include sm{
+            padding: 20px 0;
+        }
+    }
+    td{
+        border: 1px solid #000;
+    }
+}

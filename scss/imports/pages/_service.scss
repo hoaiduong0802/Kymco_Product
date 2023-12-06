@@ -1,0 +1,122 @@
+
+
+.servicepage{
+    --mt:100px;
+    --mb:700px;
+    .banner{
+        @include bg;
+        background-image:url(../img/service/banner.jpg);
+        height:100vh;
+        --title-fs:7rem;
+        position: relative;
+        &__title{
+            @include mid;
+            text-align: center;
+            h2{
+                @include text(var(--title-fs), 'SE', null, $white-cl, uppercase);
+                letter-spacing:0.4px;
+            }
+            p{
+                padding-top: 25px;
+                @include text(var(--body25-fs), 'U', initial, $white-cl, none);
+            }
+        }
+    }
+    .row{
+        justify-content:space-between;
+    }
+    .content{
+        margin: var(--mt) 0 var(--mb) 0;
+        &__title{
+            margin-bottom: 67px;
+            h3{
+                @include text(var(--body40-fs), 'SE', initial, $black-cl, uppercase);
+            }
+        }
+        &__list{
+            padding: 25px 25px 25px 60px;
+            background:$red-cl;
+            ul{
+                li{
+                    margin: 7.5px 0;
+                    position: relative;
+                    a{
+                        @include text(var(--body30-fs), 'SE', initial, $white-cl, uppercase);
+                    }
+                    &::after{
+                        @include line(7px, 7px, $white-cl);
+                        bottom:6px;
+                        left: -20px;
+                    }
+                    &::before{
+                        @include line(7px, 7px, $white-cl);
+                        bottom:6px;
+                        left: -100px;
+                        @include transition(all .3s);
+                    }
+                    &:hover{
+                        &::before{
+                            width:85px;
+                            @include transition(all .3s);
+                        }
+                    }
+                }
+                .active{
+                    &::before{
+                        width:85px;
+                    }
+                }
+            }
+        }
+        &__text{
+            &-item{
+                display: none;
+                p{
+                    @include text(var(--body30-fs), 'SE', initial, $black-cl, none);
+                }
+            }
+            &-btn{
+                margin-top: 88px;
+            }
+            .active{
+                display: block;
+            }
+        }
+    }
+    .form {
+        &__text {
+          &-form {
+            padding-top: 15px;
+            input,
+            textarea {
+              margin-top: 45px;
+              font-size: var(--body18-fs);
+            }
+          }
+        }
+    }
+    @include sm{
+        --mt:80px;
+        --mb:500px;
+        .banner{
+            height:542px;
+            --title-fs:6rem;
+        }
+    }
+    @include sm{
+        --mt:50px;
+        --mb:300px;
+        .banner{
+            height:350px;
+            --title-fs:5rem;
+        }
+        .content{
+            &__title{
+                margin-bottom: 35px;
+            }
+            &__text{
+                margin-top: 50px;
+            }
+        }
+    }
+}

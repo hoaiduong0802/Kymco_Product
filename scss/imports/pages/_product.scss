@@ -1,0 +1,762 @@
+.productpage {
+    --mr: -100px;
+
+    .banner {
+        background-image: url(../img/product/banner.jpg);
+        @include bg;
+        width: 100%;
+        position: relative;
+        height: 525px;
+
+        @include sm {
+            height: 425px;
+        }
+
+        @include xs {
+            height: 350px;
+        }
+    }
+
+    .productTitle {
+        &__d {
+            padding-top: 65px;
+            max-width: 770px;
+            margin: auto;
+            text-align: center;
+
+            p {
+                padding-top: 40px;
+                line-height: initial;
+            }
+        }
+    }
+
+    .product {
+        overflow: hidden;
+        padding-bottom: 70px;
+        --body69-fs: 6.9rem;
+
+        &__tab {
+            text-align: left;
+            padding: 150px 0 95px 0;
+
+            ul {
+                display: flex;
+                position: relative;
+
+                li {
+                    padding: 0 30px;
+                    position: relative;
+                    opacity: 0.5;
+                    cursor: pointer;
+                }
+
+                .active {
+                    opacity: 1;
+                }
+
+                @include sm {
+                    li {
+                        font-size: 4rem;
+                    }
+                }
+
+                @include xs {
+                    li {
+                        font-size: 2rem;
+                    }
+                }
+
+                .line {
+                    &::after {
+                        @include line(2px, 100%, $black-cl);
+                        top: 0;
+                        right: 0;
+                    }
+                }
+
+                &::after {
+                    @include line(100%, 2px, $black-cl);
+                    bottom: 0;
+                    right: -70%;
+                }
+
+                @include sm {
+                    justify-content: center;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                @include xs {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            position: relative;
+            display: none;
+
+            .left {
+                z-index: 11;
+
+                .img {
+                    position: relative;
+
+                    img {
+                        margin-left: var(--mr);
+                        max-width: none;
+                    }
+
+                    .motoBig {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+            }
+
+            .right {
+                z-index: 11;
+
+                .title {
+                    max-width: 430px;
+
+                    h2 {
+                        font-style: italic;
+                        padding: 30px 0 10px;
+                        line-height: inherit;
+                    }
+
+                    p {
+                        @include text(var(--body18-fs), 'U', initial, $black-cl, none);
+                        font-style: italic;
+                    }
+
+                    @include sm {
+                        margin: auto;
+                    }
+
+                    @include xs {
+                        margin: auto;
+                    }
+                }
+
+                @media only screen and (max-width:1199.20px) and (min-width:990px) {
+                    padding-left: 100px;
+                }
+            }
+
+            .row {
+                position: relative;
+
+                &::after {
+                    @include line(100%, 510px, #f8f8f8);
+                    right: 0;
+                    top: 12px;
+                    transform: skew(-10deg, 0deg);
+
+                    @include sm {
+                        background: transparent;
+                    }
+
+                    @include xs {
+                        background: transparent;
+                    }
+                }
+            }
+
+            .list2 {
+                .right {
+                    padding-left: 75px;
+                }
+            }
+        }
+
+        &__choose {
+            display: none;
+            --pb: 80px;
+
+            ul {
+                @include mid(true);
+
+                li {
+                    @include size(104px, 104px);
+                    margin: 0 15px;
+                    border: 1px solid #000;
+                    cursor: pointer;
+                    @include transition(all .3s);
+
+                    .text {
+                        @include mid(true);
+                        flex-direction: column;
+                        height: 100%;
+
+                        p {
+                            @include text(var(--body18-fs), 'SE', null, $black-cl, uppercase);
+                            letter-spacing: 0.4px;
+                            @include transition(all .3s);
+                        }
+
+                        span {
+                            @include text(var(--body69-fs), 'SE', null, $black-cl, uppercase);
+                            @include transition(all .3s);
+                        }
+
+                        .spanNo {
+                            font-size: var(--body35-fs);
+                        }
+
+                        .p1 {
+                            font-size: var(--body30-fs);
+                        }
+                    }
+
+                    &.--borderNone {
+                        border: none;
+                        pointer-events: none;
+                    }
+
+                    &:hover {
+                        background: $red-cl;
+                        @include transition(all .3s);
+
+                        .text {
+
+                            p,
+                            span {
+                                color: $white-cl;
+                                @include transition(all .3s);
+                            }
+
+                            svg {
+                                filter: invert(100%) sepia(53%) saturate(1%) hue-rotate(145deg) brightness(109%) contrast(101%);
+                                @include transition(all .3s);
+                            }
+                        }
+                    }
+                }
+
+                .active {
+                    background: $red-cl;
+
+                    .text {
+
+                        p,
+                        span {
+                            color: $white-cl;
+                            @include transition(all .3s);
+                        }
+
+                        svg {
+                            filter: invert(100%) sepia(53%) saturate(1%) hue-rotate(145deg) brightness(109%) contrast(101%);
+                            @include transition(all .3s);
+                        }
+                    }
+                }
+
+            }
+
+            --pt:35px;
+
+            &-title {
+                text-align: center;
+
+                p {
+                    padding-top: 10px;
+                }
+            }
+
+            &-option {
+                margin: 74px 0 63px 0;
+
+                .left,
+                .right {
+                    padding-top: 30px;
+                }
+
+                .text {
+                    svg {
+                        width: 73px;
+                        @include transition(all .3s);
+
+                        @include xs {
+                            width: 65px;
+                        }
+                    }
+
+                    p {
+                        padding-top: 5px;
+                    }
+                }
+            }
+
+            &-price {
+                padding: 48px 0 58px 0;
+                position: relative;
+
+                .title {
+                    text-align: center;
+
+                    h5 {
+                        @include text(var(--body30-fs), 'SE', null, $black-cl, uppercase);
+                    }
+
+                    p {
+                        font-size: var(--body18-fs);
+                        padding-top: 10px;
+                    }
+                }
+
+                .price {
+                    @include flex-between;
+                    padding-top: var(--pt);
+
+                    &__item {
+                        @include text(var(--body30-fs), 'SE', null, $black-cl, uppercase);
+                        letter-spacing: 0.4px;
+                        width: 45%;
+
+                        span {
+                            font-size: (var(--body40-fs));
+                        }
+
+                        &.--min {
+                            text-align: left;
+                        }
+
+                        &.--max {
+                            text-align: right;
+                        }
+
+                        input {
+                            width: 100%;
+                            height: 2px;
+                        }
+                    }
+                }
+
+                &::after,
+                &::before {
+                    @include line(100%, 1px, #cccccc);
+                    left: 0;
+                }
+
+                &::after {
+                    bottom: 0;
+                }
+
+                &::before {
+                    top: 0;
+                }
+            }
+
+            &-style {
+                text-align: center;
+                padding: 55px 0 var(--pb) 0;
+
+                h5 {
+                    @include text(var(--body30-fs), 'SE', null, $black-cl, uppercase);
+                }
+
+                .sex {
+                    padding: 30px 0 45px 0;
+                }
+
+                .text {
+                    svg {
+                        width: 50px;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+        }
+
+        .active {
+            display: block;
+        }
+
+        .list2 {
+            margin-top: 90px;
+        }
+
+        .list3 {
+            margin-top: 65px;
+        }
+
+        .list2,
+        .list3 {
+            &::after {
+                top: 0;
+            }
+        }
+
+        @include sm {
+            .row_list {
+                flex-direction: column-reverse;
+            }
+
+            .list2,
+            .list3 {
+                margin-top: 40px;
+            }
+        }
+
+        @include xs {
+            .row_list {
+                flex-direction: column-reverse;
+            }
+
+            &__tab {
+                ul {
+                    li {
+                        padding: 0 10px;
+                    }
+                }
+            }
+
+            &__choose {
+                --pb: 50px;
+
+                ul {
+                    li {
+                        margin: 5px;
+                    }
+                }
+
+                &-price {
+                    padding: 48px 0 58px 0;
+                    position: relative;
+
+                    .title {
+                        text-align: center;
+
+                        h5 {
+                            @include text(var(--body30-fs), 'SE', null, $black-cl, uppercase);
+                        }
+
+                        p {
+                            font-size: var(--body18-fs);
+                            padding-top: 10px;
+                        }
+                    }
+
+                    .price {
+                        flex-direction: column;
+
+                        &__item {
+                            padding: 20px 0;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include sm {
+        --mr: 0;
+
+        .productTitle {
+            &__d {
+                padding-top: 45px;
+
+                p {
+                    padding-top: 30px;
+                }
+            }
+        }
+
+        .product {
+            padding-bottom: 50px;
+
+            &__tab {
+                padding: 100px 0 50px;
+            }
+
+            &__list {
+
+                .left,
+                .right {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include xs {
+        --mr: 0;
+
+        .productTitle {
+            &__d {
+                padding-top: 25px;
+
+                p {
+                    padding-top: 15px;
+                }
+            }
+        }
+
+        .product {
+            padding-bottom: 15px;
+
+            &__tab {
+                padding: 45px 0;
+            }
+
+            &__list {
+
+                .left,
+                .right {
+                    text-align: center;
+                }
+
+                .left {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .slider {
+                &__btn {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // popupsosanh
+    .popupsosanh {
+        background: #000000a1;
+        position: fixed;
+        @include size(100%, 100vh);
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        display: none;
+
+        .content {
+            margin: auto;
+            position: absolute;
+            animation: modalFaceIn ease .5s;
+            inset: 0;
+
+            &__d {
+                @include size(450px, 165px);
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                text-align: center;
+                transform: skew(-10deg) translate(-50%, -50%);
+                background: #f4352c;
+
+                .text {
+                    padding-top: 50px;
+
+                    p {
+                        @include text(var(--body18-fs), 'SE', null, $white-cl, uppercase)
+                    }
+                }
+
+                .btn {
+                    background: $white-cl;
+                    padding: 5px 30px;
+                    margin-top: 20px;
+
+                    span {
+                        display: flex;
+                        @include text(var(--body14-fs), 'SE', null, $red-cl, uppercase)
+                    }
+                }
+
+                .close {
+                    padding: 15px 20px;
+                    @include br(50%);
+                    background: $white-cl;
+                    position: absolute;
+                    top: -20px;
+                    right: -20px;
+                    cursor: pointer;
+
+                    span {
+                        font-size: var(--body18-fs);
+                    }
+                }
+            }
+
+            .active {
+                display: none;
+            }
+
+            @media (max-width: 500px) {
+                &__d {
+                    @include size(245px, 100px);
+
+                    .text {
+                        padding-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .active {
+        display: block;
+    }
+
+    @keyframes modalFaceIn {
+        from {
+            opacity: 0;
+            @include transform(translateY(-150px));
+        }
+
+        to {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+    }
+
+}
+
+.sliderSmall {
+    &__item {
+        margin: 35px 0 0 0;
+        @include size(95%, 216px);
+
+        .box {
+            @include facenter;
+            @include size(100%, 100%);
+        }
+
+        .flickity-viewport {
+            height: 100% !important;
+        }
+
+        &-d {
+            position: relative;
+            height: 100% !important;
+            margin: 0 15px;
+
+            h4 {
+                @include text(var(--body22-fs), 'SE', initial, $black-cl, uppercase);
+            }
+
+            .price {
+                margin-top: 5px;
+                padding-left: 10px;
+                position: relative;
+
+                p,
+                span {
+                    @include text(1.3rem, 'SE', initial, $black-cl, uppercase);
+                }
+
+                span {
+                    font-size: 2.9rem;
+                }
+
+                &::after {
+                    @include line(2px, 80%, $black-cl);
+                    left: 0;
+                    bottom: 6px;
+                }
+            }
+
+            .price1 {
+                margin-top: 15px !important;
+            }
+
+            .button {
+                position: absolute;
+                @include hidden;
+                bottom: 0;
+                left: 0;
+                @include transition(all .3s);
+
+                &__d {
+                    &-item {
+                        text-align: center;
+                        display: inline-flex;
+                        cursor: pointer;
+
+                        span {
+                            padding: 8px 0;
+                            width: 160px;
+                            @include br(30px);
+                            background: $red-cl;
+                            @include text(var(--body22-fs), 'SE', initial, $white-cl, uppercase);
+                            @include transition(all .4s);
+                        }
+
+                        &:hover {
+                            span {
+                                background: #d12922;
+                                @include transition(all .4s);
+                            }
+                        }
+                    }
+
+                    .detail {
+                        margin-bottom: 20px;
+                    }
+
+                    @include xs {
+                        &-item {
+                            span {
+                                padding: 5px 0;
+                                width: 100px;
+                            }
+                        }
+
+                        .detail {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .button {
+                    @include visible;
+                    @include transition(all .3s);
+                }
+            }
+
+            @include xs {
+                margin: 0;
+                height: auto !important;
+
+                .price {
+                    span {
+                        font-size: 1.9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .item3 {
+        margin: 65px 0 0 0;
+    }
+
+    &__btn {
+        &-d {
+            position: absolute;
+            cursor: pointer;
+            right: -20px;
+            bottom: 22%;
+            padding: 10px 30px 10px 0;
+            background: $red-cl;
+            transform: skew(-10deg, 0deg);
+
+            img {
+                width: 30px;
+            }
+        }
+    }
+}

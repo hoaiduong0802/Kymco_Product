@@ -1,0 +1,108 @@
+// css footer
+
+
+footer{
+    background:$black-cl;
+    z-index: 111;
+    .footer{
+        height:100%;
+        width:100%;
+        padding: 50px 0;
+        text-align: center;
+        &__title{
+            p{
+                letter-spacing:4px;
+                @include text(var(--body30-fs), 'DB', null, $white-cl, uppercase);
+            }
+        }
+        &__logo{
+            padding: 50px 0 70px 0;
+            --w:35px;
+            --h:35px;
+            ul{
+                @include mid(true);
+                li{
+                    padding: 0 15px;
+                    svg{
+                        cursor: pointer;
+                        filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(187deg) brightness(104%) contrast(101%);
+                        @include size(var(--w),var(--h));
+                        @include transition(all .3s);
+                    }
+                    .fb{
+                        &:hover{
+                            filter: invert(34%) sepia(13%) saturate(2491%) hue-rotate(183deg) brightness(92%) contrast(87%);
+                            @include transition(all .3s);
+                        }
+                    }
+                    .twitter{
+                        &:hover{
+                            filter: invert(47%) sepia(98%) saturate(1234%) hue-rotate(176deg) brightness(98%) contrast(94%);
+                            @include transition(all .3s);
+                        }
+                    }
+                    .ins{
+                        &:hover{
+                            filter: invert(41%) sepia(92%) saturate(4645%) hue-rotate(306deg) brightness(81%) contrast(83%);
+                            @include transition(all .3s);
+                        }
+                    }
+                    .youtube{
+                        &:hover{
+                            filter: invert(12%) sepia(94%) saturate(6238%) hue-rotate(3deg) brightness(97%) contrast(116%);
+                            @include transition(all .3s);
+                        }   
+                    }
+                }
+            }
+        }
+        &__text{
+            ul{
+                @include mid(true);
+                text-align: center;
+                padding-bottom: 40px;
+                li{
+                    padding: 0 16px;
+                    position: relative;
+                    a{
+                        @include text(var(--body16-fs), 'U', null, $white-cl, uppercase);
+                        position: relative;
+                        @include transition(all .3s);
+                        &:hover{
+                            color: $red-cl;
+                            @include transition(all .3s);
+                        }
+                    }
+                }
+                .line{
+                    &::after{
+                        @include line(2px, 17px, $white-cl);
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+            p{
+                font-size: var(--body16-fs);
+                color: $white-cl;
+                padding-top: 15px;
+            }
+        }
+
+        @include sm{
+            &__logo{
+                padding: 30px 0 50px 0;
+            }
+        }
+        @include xs{
+            &__logo{
+                padding: 15px 0 30px 0;
+                --w:30px;
+                --h:30px;
+            }
+            .li1{
+                display: none;
+            }
+        }
+    }
+}

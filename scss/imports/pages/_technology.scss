@@ -1,0 +1,667 @@
+.technologypage {
+    --title-fs: 14rem;
+    --quotation-fs: 14.5rem;
+    --body100-fs: 10rem;
+
+    main {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .section1 {
+        position: relative;
+        height: 1000px;
+
+        &__title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            top: 25%;
+            z-index: 11;
+
+            h3 {
+                @include text(var(--body25-fs), 'SE', null, $black-cl, uppercase);
+                letter-spacing: 0.4px;
+                padding-top: 10px;
+            }
+
+            h1 {
+                @include text(var(--title-fs), 'SE', null, $black-cl, uppercase);
+                letter-spacing: 0.4px;
+            }
+        }
+
+        .sharp1 {
+            position: absolute;
+            right: 0;
+            top: -150px;
+        }
+
+        .sharp2 {
+            position: relative;
+            top: 150px;
+        }
+
+        .circle {
+            position: absolute;
+            width: 426px;
+            bottom: 3px;
+            left: 592px;
+            overflow: hidden;
+            cursor: pointer;
+
+            &::after {
+                @include line(100%, 100%, rgba(0, 0, 0, 0.3));
+                top: 0;
+                left: 0;
+                z-index: 9;
+                @include transition(all .3s);
+                @include br(50%);
+            }
+
+            .play {
+                @include mid;
+                z-index: 11;
+                width: 20%;
+
+                img {
+                    filter: invert(100%) sepia(96%) saturate(15%) hue-rotate(212deg) brightness(104%) contrast(104%);
+                }
+            }
+
+            &:hover {
+                &::after {
+                    background: rgba(0, 0, 0, 0.5);
+                    @include transition(all .3s);
+                }
+            }
+        }
+
+        &__text {
+            position: absolute;
+            right: 0;
+            max-width: 347px;
+            bottom: 0;
+
+            p {
+                @include text(var(--body25-fs), 'SE', null, $black-cl, uppercase)
+            }
+
+            span {
+                display: block;
+                @include text(14rem, 'DB', 0, $black-cl, uppercase)
+            }
+        }
+
+        @media (max-width: 1366px) {
+            height: 800px;
+
+            .sharp2 {
+                width: 500px;
+            }
+
+            .circle {
+                width: 330px;
+                bottom: 28px;
+                left: 431px;
+            }
+        }
+
+        @media (max-width: 1150px) {
+            height: 650px;
+
+            &__title {
+                top: 10%;
+            }
+
+            .sharp2 {
+                width: 400px;
+            }
+
+            .circle {
+                width: 243px;
+                bottom: 11px;
+                left: 350px;
+            }
+        }
+
+        @include sm {
+            &__text {
+                bottom: -0;
+            }
+
+            .sharp2 {
+                width: 340px;
+            }
+
+            .circle {
+                width: 220px;
+                bottom: 78px;
+                left: 296px;
+            }
+        }
+
+        @include xs {
+            .sharp2 {
+                width: 250px;
+            }
+
+            .circle {
+                width: 154px;
+                bottom: 196px;
+                left: 218px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            &__title {
+                top: 15%;
+            }
+
+            .sharp1 {
+                top: 0;
+                right: -160px;
+            }
+
+            .sharp2 {
+                left: -100px;
+            }
+
+            .circle {
+                left: 120px;
+            }
+        }
+    }
+
+    .section2 {
+        position: relative;
+        height: 1300px;
+
+        .img1 {
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translateX(-50%);
+        }
+
+        .img2 {
+            position: absolute;
+            right: 0;
+        }
+
+        &__text {
+            max-width: 650px;
+            position: relative;
+            padding-top: 150px;
+
+            h3 {
+                @include text(var(--body35-fs), 'SE', 4.2rem, $black-cl, uppercase);
+                letter-spacing: 0.4px;
+            }
+
+            p {
+                @include text(var(--body18-fs), Arial, 3.5rem, $black-cl, none);
+                padding-top: 30px;
+            }
+
+            &::before {
+                @include line(4px, 150px, $black-cl);
+                top: 0;
+                left: 0;
+            }
+        }
+
+        @media (max-width: 1366px) {
+            height: 1115px;
+
+            .people {
+                width: 500px;
+            }
+        }
+
+        @media (max-width: 1150px) {
+            height: 1040px;
+
+            .people {
+                width: 450px;
+            }
+        }
+
+        @include sm {
+            height: 975px;
+
+            .people {
+                width: 400px;
+            }
+        }
+
+        @include xs {
+            height: 1115px;
+        }
+
+        @media (max-width: 500px) {
+            height: 1070px;
+
+            .people {
+                width: 350px;
+            }
+
+            .img2 {
+                right: -111px;
+            }
+
+            .img1 {
+                left: -35%;
+                top: 64%;
+                transform: unset;
+            }
+        }
+    }
+
+    .section3 {
+        height: 800px;
+        position: relative;
+
+        &__text {
+            max-width: 480px;
+            position: absolute;
+            padding: 0 15px;
+
+            h4 {
+                @include text(var(--body25-fs), 'SE', 3.2rem, $black-cl, uppercase)
+            }
+
+            ul {
+                li {
+                    margin: 15px 0;
+                    position: relative;
+
+                    a {
+                        @include text(var(--body25-fs), 'SE', null, $black-cl, uppercase);
+                        letter-spacing: 0.4px;
+                        @include transition(all .4s);
+                    }
+
+                    .line {
+                        width: 0%;
+                        height: 3px;
+                        background: #000;
+                        position: relative;
+                        left: -100%;
+                        @include transition(all .6s);
+                    }
+
+                    .content {
+                        @include transition(all .4s);
+                        @include hidden;
+                        height: 0;
+                        transform: translateY(15px);
+
+                        p {
+                            @include text(var(--body18-fs), Arial, 3rem, $black-cl, none);
+                            padding-top: 20px;
+                        }
+                    }
+
+                    &::after {
+                        @include line(6px, 6px, $black-cl);
+                        bottom: 5px;
+                        left: -20px;
+                    }
+                }
+
+                .active {
+                    a {
+                        @include text(var(--body100-fs), 'SE', initial, $black-cl, uppercase);
+                        @include transition(all .4s);
+                    }
+
+                    .line {
+                        width: 110%;
+                        transition-delay: 0.5s;
+                    }
+
+                    .content {
+                        @include transition(all .5s);
+                        transition-delay: .8s;
+                        transform: translateY(0);
+                        height: auto;
+                        @include visible;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &__img {
+            position: absolute;
+            right: 0;
+            bottom: 30%;
+
+            .circle {
+                width: 300px;
+                position: absolute;
+                bottom: -55px;
+                left: -135px;
+                display: none;
+                cursor: pointer;
+
+                &::after {
+                    @include line(98%, 98%, rgba(0, 0, 0, 0.3));
+                    top: 0;
+                    left: 0;
+                    z-index: 9;
+                    @include transition(all .3s);
+                    border-radius: 50%;
+                }
+
+                .play {
+                    @include mid;
+                    z-index: 11;
+                    width: 20%;
+
+                    img {
+                        filter: invert(100%) sepia(96%) saturate(15%) hue-rotate(212deg) brightness(104%) contrast(104%);
+                    }
+                }
+
+                &:hover {
+                    &::after {
+                        background: rgba(0, 0, 0, 0.5);
+                        @include transition(all .3s);
+                    }
+                }
+            }
+
+            .active {
+                display: block;
+            }
+
+            .sharp4 {
+                width: 600px;
+            }
+        }
+
+        @media (max-width: 1366px) {
+            --body100-fs: 8rem;
+
+            .sharp4 {
+                width: 500px;
+            }
+
+            .circle {
+                width: 260px;
+                bottom: -55px;
+                left: -123px;
+            }
+        }
+
+        @media (max-width: 1150px) {
+            --body100-fs: 7rem;
+            height: 750px;
+
+            .sharp4 {
+                width: 400px;
+            }
+
+            .circle {
+                width: 219px;
+                bottom: -54px;
+                left: -115px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            height: 900px;
+
+            &__img {
+                bottom: 0;
+                right: -165px;
+            }
+        }
+
+        @include xs {
+            height: 900px;
+
+            &__img {
+                bottom: 0;
+            }
+        }
+    }
+
+    .section4 {
+        --title-fs: 6rem;
+        position: relative;
+        margin: 200px 0;
+
+        &__text {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+
+            h3 {
+                @include text(var(--title-fs), 'SE', initial, $black-cl, uppercase);
+                letter-spacing: 0.4px;
+            }
+
+            h4 {
+                @include text(var(--body35-fs), 'SE', initial, $black-cl, uppercase);
+            }
+
+            p {
+                @include text(var(--body18-fs), Arial, 3rem, $black-cl, none);
+                padding-top: 10px;
+            }
+        }
+
+        .circle3 {
+            position: absolute;
+            right: 0;
+            top: -100px;
+        }
+
+        .circle4 {
+            position: absolute;
+            right: 0;
+        }
+
+        .circle5 {
+            position: absolute;
+            right: 15%;
+            top: 65%;
+        }
+
+        @media (max-width: 1366px) {
+
+            .circle3,
+            .circle4,
+            .circle5 {
+                width: 300px;
+            }
+
+            .sharp5 {
+                width: 700px;
+            }
+        }
+
+        @media (max-width: 1150px) {
+
+            .circle3,
+            .circle4,
+            .circle5 {
+                width: 250px;
+            }
+
+            .circle4 {
+                top: 25%;
+            }
+
+            .sharp5 {
+                width: 600px;
+            }
+        }
+
+        @include sm {
+
+            .circle3,
+            .circle4,
+            .circle5 {
+                width: 200px;
+            }
+
+            .circle4 {
+                top: 25%;
+            }
+
+            .sharp5 {
+                width: 500px;
+            }
+        }
+
+        @include xs {
+
+            .circle3,
+            .circle4,
+            .circle5 {
+                width: 150px;
+            }
+
+            .circle4 {
+                top: 25%;
+            }
+
+            .sharp5 {
+                width: 500px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .circle3,
+            .circle4 {
+                width: 150px;
+                right: -100px;
+                top: 0;
+            }
+
+            .circle4 {
+                top: 20%;
+            }
+
+            .sharp5 {
+                position: relative;
+                left: -150px;
+            }
+        }
+    }
+
+    .section5 {
+        text-align: center;
+        --title-fs: 6rem;
+        position: relative;
+        padding-bottom: 100px;
+
+        &__text {
+            h3 {
+                @include text(var(--title-fs), 'SE', initial, $black-cl, uppercase);
+                letter-spacing: 0.4px;
+            }
+        }
+
+        &__icon {
+            padding-top: 20px;
+
+            img {
+                padding: 10px 0;
+            }
+        }
+
+        @include sm {
+            --title-fs: 5rem;
+        }
+
+        @include xs {
+            --title-fs: 4rem;
+        }
+    }
+
+    @include sm {
+        --title-fs: 10rem;
+        --quotation-fs: 10.5rem;
+        --body100-fs: 6rem;
+    }
+
+    @include xs {
+        --title-fs: 7rem;
+        --quotation-fs: 7.5rem;
+        --body100-fs: 4rem;
+    }
+
+
+    .videoNOOD {
+        --pd: 200px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, 0.9);
+        @include size(100vw, 100vh);
+        @include hidden;
+        padding: 0 var(--pd);
+        @include mid(true);
+
+        &_d {
+            position: relative;
+            @include size(100%, 0);
+            padding-bottom: 50%;
+            max-width: 1280px;
+            border: 10px solid #fff;
+            position: relative;
+            @include br(10px);
+
+            iframe {
+                min-width: 100%;
+                min-height: 100%;
+                @include mid;
+            }
+
+            .close {
+                background: url(../img/icon/close.svg) no-repeat center;
+                background-size: 15px;
+                @include size(50px, 50px);
+                border: 1px solid #fff;
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                cursor: pointer;
+                @include br(50%);
+                background-clip: padding-box;
+            }
+        }
+
+        @include sm {
+            --pd: 80px;
+        }
+
+        @include xs {
+            --pd: 30px;
+
+            &_d {
+                padding-bottom: 90%;
+                border: 5px solid #fff;
+
+                .close {
+                    right: -20px;
+                }
+            }
+        }
+    }
+
+    .active {
+        @include visible;
+    }
+}

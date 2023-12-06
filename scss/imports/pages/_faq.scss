@@ -1,0 +1,45 @@
+.faqpage {
+    .content {
+        &__text {
+            &-item {
+                display: none;
+            }
+
+            .active {
+                display: block;
+            }
+        }
+    }
+
+    .active {
+        display: block;
+    }
+
+    .motoDetail {
+        &__d {
+            &-accodion {
+                .tab {
+                    &__item {
+                        .head {
+                            .text{
+                                white-space: unset;
+                            }
+                            .plus {
+                                top: 0;
+                            }
+                            h4{
+                                @include text(var(--body30-fs), "SE", initial, $black-cl, none);
+                            }
+                        }
+                        .content{
+                            p{
+                                @include text(var(--body18-fs), "U", initial, $black-cl, none);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

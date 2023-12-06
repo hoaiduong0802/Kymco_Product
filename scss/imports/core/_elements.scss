@@ -1,0 +1,41 @@
+
+// main{
+//     // padding-top: 70px;
+//     // @include sm{
+//     //     padding-top: 65px;
+//     // }
+//     // @include xs{
+//     //     padding-top: 60px;
+//     // }
+// }
+
+.titleH2{
+    h2{
+        @include text(var(--h2-fs), 'SE', initial, $black-cl, uppercase);
+        letter-spacing:0.4px;
+    }
+    p{
+        @include text(var(--body22-fs), 'U', initial, $black-cl, none);
+    }
+}
+
+
+.btn{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 50px;
+    @include br(30px);
+    background:$red-cl;
+    @include transition(all .4s);
+    span{
+        @include text(var(--body25-fs), 'SE', null, $white-cl, uppercase);
+    }
+    &:hover{
+        background:#d12922;
+        @include transition(all .4s);
+    }
+    @include xs{
+        padding: 15px 30px;
+    }
+}

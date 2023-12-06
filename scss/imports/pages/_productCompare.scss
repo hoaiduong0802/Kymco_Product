@@ -1,0 +1,171 @@
+.productComparepage {
+
+
+    .motoDetail {
+        --pt: 45px;
+        padding: 200px 0;
+
+        &__d {
+            &-accodion {
+                text-align: center;
+
+                .tab {
+                    padding-top: var(--pt);
+                }
+            }
+        }
+
+        @include sm {
+            padding: 100px 0;
+        }
+
+        @include xs {
+            padding: 80px 0;
+        }
+    }
+
+    .compare {
+        text-align: center;
+
+        &__content {
+            @include facenter;
+            justify-content: space-around;
+            position: relative;
+            z-index: 11;
+            margin-top: 65px;
+            height: 100%;
+            padding-top: 65px;
+
+            &-text {
+                text-align: left;
+
+                p {
+                    @include text(var(--body35-fs), 'SE', initial, $black-cl, uppercase);
+                }
+            }
+
+            &-more {
+                cursor: pointer;
+
+                li {
+                    padding: 90px 20px;
+                    border: 1px dashed $red-cl;
+
+                    a {
+                        @include text(var(--body30-fs), 'SE', null, $red-cl, uppercase);
+                        @include transition(all .3s);
+                    }
+
+                    &:hover {
+                        a {
+                            color: #c60900;
+                            @include transition(all .3s);
+                        }
+                    }
+                }
+            }
+
+            .item {
+                height: 100%;
+                @include mid(true);
+            }
+
+            &::after {
+                @include line(100%, 370px, #f8f8f8);
+                right: 0;
+                top: 0;
+                transform: skew(-10deg, 0deg);
+                z-index: -1;
+
+                @include sm {
+                    display: none;
+                }
+
+                @include xs {
+                    display: none;
+                }
+            }
+        }
+
+        .sliderSmall {
+            &__item {
+                .left {
+                    padding-right: 100px;
+                }
+
+                .button {
+                    @include visible;
+
+                    &__d {
+                        @include facenter;
+                        position: absolute;
+                        bottom: -40px;
+
+                        .detail {
+                            margin-bottom: 0;
+                            margin-right: 10px;
+                        }
+
+                        span {
+                            width: 120px;
+                            padding: 5px 0;
+                            font-size: var(--body18-fs);
+                        }
+
+                        @include sm {
+                            bottom: -50px;
+                        }
+                    }
+                }
+
+                .active {
+                    display: none;
+                }
+            }
+        }
+
+        @include sm {
+            &__content {
+                flex-direction: column;
+                height: auto;
+                margin-top: 0;
+
+                &-text {
+                    text-align: center;
+                }
+
+                .item {
+                    padding: 20px 0;
+                }
+
+                &-more {
+                    padding-top: 80px !important;
+                }
+            }
+        }
+
+        @include xs {
+            .sliderSmall {
+                &__item {
+                    .left {
+                        padding-right: 0;
+                    }
+
+                    .button {
+                        &__d {
+                            flex-direction: column;
+
+                            &-item {
+                                margin: 5px 0;
+                            }
+
+                            .detail {
+                                margin-right: 0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

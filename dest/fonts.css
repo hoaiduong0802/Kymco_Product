@@ -1,0 +1,54 @@
+/* FONT FACE - font-display: fallback; */
+
+/* VÍ DỤ - tuỳ chỉnh theo từng dự án*/
+
+@font-face {
+    font-family: "SE";
+    src: url("../fonts/SFUDINEngAlt.woff2") format("woff2"),
+        url("../fonts/SFUDINEngAlt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "SL";
+    src: url("../fonts/SFUDINLight.woff2") format("woff2"),
+        url("../fonts/SFUDINLight.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "U";
+    src: url("../fonts/UTMAvo.woff2") format("woff2"),
+        url("../fonts/UTMAvo.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "UB";
+    src: url("../fonts/UTMAvoBold.woff2") format("woff2"),
+        url("../fonts/UTMAvoBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'DB';
+    src: url('../fonts/DINCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/DINCondensed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'SA';
+    src: url('../fonts/SVN-Avobold.woff2') format('woff2'),
+        url('../fonts/SVN-Avobold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+  }

@@ -1,0 +1,67 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+.--black-cl {
+    color: $black-cl;
+}
+
+
+
+
+
+
+.heading {
+    font-family: 'U';
+    &.--h1{
+        @include text(var(--textBig-fs), 'DB', null, $white-cl, uppercase);
+        opacity: 0.15;
+        @include transform (translateX(-5%));
+    }
+    &.--h2{
+        @include text(var(--h2-fs), 'SE', initial, $black-cl, uppercase);
+        letter-spacing:0.4px;
+    }
+    &.--h3{
+        @include text(var(--h3-fs), 'SE', initial, $black-cl, uppercase);
+        letter-spacing:0.4px;
+    }
+    &.--h4{
+        @include text(var(--h4-fs), 'DB', initial, $black-cl, uppercase);
+        letter-spacing:0.4px;
+    }
+}
+
+
+
+.backtoTop{
+    position: fixed;
+    right:30px;
+    top: 50%;
+    cursor: pointer;
+    opacity: 0;
+    @include transition(all .3s);
+    pointer-events: none;
+    z-index: 1111;
+}
+
+
+

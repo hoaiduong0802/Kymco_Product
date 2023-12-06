@@ -1,0 +1,206 @@
+.newspage {
+    .news {
+        --pt: 80px;
+        --size: 60px;
+        padding-top: 60px;
+
+        &__wrap {
+            padding: 0 30px 0;
+            display: none;
+
+            &-item {
+                margin-top: var(--pt);
+            }
+        }
+
+        .active {
+            display: grid;
+        }
+    }
+}
+
+.news__paging {
+    @include mid(true);
+    padding: 0px 10px;
+    margin: 80px 0 120px;
+    --pt: 80px;
+    --size: 60px;
+
+    &-before,
+    &-after {
+        position: relative;
+        @include facenter;
+
+        .line {
+            @include size(0, 2px);
+            background: $black-cl;
+            @include transition(all .3s);
+        }
+
+        &:hover {
+            .line {
+                width: 18px;
+                @include transition(all .3s);
+            }
+        }
+    }
+
+    &-before {
+        .line {
+            margin-right: 5px;
+        }
+    }
+
+    &-after {
+        .line {
+            margin-left: 5px;
+        }
+    }
+
+    &-number {
+        ul {
+            @include facenter;
+
+            li {
+                @include size(var(--size), var(--size));
+                border: 1px solid #d8d8d8;
+                margin: 0 10px;
+                cursor: pointer;
+                @include transition(all .3s);
+
+                a {
+                    @include text(var(--body30-fs), 'SE', null, $black-cl, none);
+                    @include transition(all .3s);
+                    height: 100%;
+                    @include mid(true);
+                }
+
+                &:hover {
+                    background: $red-cl;
+                    @include transition(all .3s);
+
+                    a {
+                        @include transition(all .3s);
+                        color: $white-cl;
+                    }
+                }
+            }
+
+            .active {
+                background: $red-cl;
+
+                a {
+                    color: $white-cl;
+                }
+            }
+        }
+    }
+
+    .item {
+        margin: 0 10px;
+        border: 1px solid #d8d8d8;
+        padding: 20px;
+        cursor: pointer;
+
+        p {
+            @include text(var(--body20-fs), Arial, null, $black-cl, none)
+        }
+    }
+
+    @include sm {
+        --pt: 0;
+        --size: 52px;
+
+        .item {
+            padding: 15px;
+        }
+    }
+
+    @include xs {
+        --pt: 0;
+
+        .item {
+            padding: 9px;
+            margin: 0px 5px;
+        }
+
+        &-number {
+            ul {
+                @include facenter;
+
+                li {
+                    @include size(var(--size), var(--size));
+                    border: 1px solid #d8d8d8;
+                    margin: 0 10px;
+                    cursor: pointer;
+                    @include transition(all .3s);
+
+                    a {
+                        @include text(var(--body30-fs), 'SE', null, $black-cl, none);
+                        @include transition(all .3s);
+                        height: 100%;
+                        @include mid(true);
+                    }
+
+                    &:hover {
+                        background: $red-cl;
+                        @include transition(all .3s);
+
+                        a {
+                            @include transition(all .3s);
+                            color: $white-cl;
+                        }
+                    }
+                }
+
+                .active {
+                    background: $red-cl;
+
+                    a {
+                        color: $white-cl;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bannerNews {
+    background-image: url(../img/news/banner.jpg);
+    @include bg;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    --title-fs: 7rem;
+
+    &__title {
+        @include mid;
+        text-align: center;
+
+        h2 {
+            @include text(var(--title-fs), 'SE', null, $white-cl, uppercase);
+            letter-spacing: 0.4px;
+        }
+
+        p {
+            padding-top: 25px;
+            @include text(var(--body25-fs), 'U', initial, $white-cl, none);
+        }
+    }
+
+    @include sm {
+        height: 542px;
+        --title-fs: 6rem;
+    }
+
+    @include xs {
+        --title-fs: 5rem;
+        height: 350px;
+
+        &__title {
+            p {
+                padding-top: 15px;
+            }
+        }
+    }
+}

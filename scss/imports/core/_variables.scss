@@ -1,0 +1,172 @@
+//======================================================BOXED LAYOUT=======================================================
+
+$container-max-width: 100%;
+$container-width: 1200px; // tùy thuộc vào container của bản thiết kế // $container-width = container (đo từ bản thiết kế) + 30px
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+//=====================================CÁC BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE======================================
+// colors - tuỳ chỉnh
+$red-cl:#f4352c;
+$white-cl: #fff;
+$black-cl: #000000;
+$green-cl:#617941;
+$gray-cl: #525355;
+
+
+
+.--black{
+    background: $black-cl;
+}
+.--green{
+    background: $green-cl;
+}
+.--red{
+    background: $red-cl;
+}
+
+// timing transition - tuỳ chỉnh
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+
+// ========================================CÁC BIẾN CÓ THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE=====================================
+
+:root {
+    //=========== VÍ DỤ ============//
+
+    // font-size & line-height heading
+
+    --textBig-fs: 22rem;
+    // --h1-lh: 8rem;
+    --h1-fs: 8rem;
+
+    --h2-fs: 6rem;
+
+    --h3-fs: 5rem;
+
+    --h4-fs: 3.5rem;
+
+
+    --body14-fs: 1.4rem;
+
+    --body16-fs: 1.6rem;
+
+    --body18-fs: 1.8rem;
+    // // --body18-lh: 2.6rem;
+
+    --body20-fs: 2rem;
+
+    --body22-fs: 2.2rem;
+
+    --body25-fs: 2.5rem;
+
+    --body30-fs:3rem;
+
+    --body35-fs:3.5rem;
+
+    --body40-fs:4rem;
+
+    --body48-fs:4.8rem;
+
+    --paging-fs: 7.3rem;
+
+    --paging-small-fs: 4.8rem;
+
+    --gap: 50px; // gap này sử dụng cho gap cột & padding của container, container-fluid
+
+    @media (max-width: $sm-max) {
+        // Tablet
+        --h1-fs: 7rem;
+
+        --textBig-fs: 18rem;
+
+        --h2-fs: 5rem;
+
+        --h4-fs: 3rem;
+
+
+        --body14-fs: 1.2rem;
+
+        --body16-fs: 1.4rem;
+
+        --body18-fs: 1.6rem;
+
+        --body20-fs: 1.8rem;
+
+        --body22-fs: 2rem;
+
+        --body25-fs: 2.3rem;
+
+        --body30-fs: 2.8rem;
+
+        --body35-fs:3.3rem;
+
+
+
+        --body48-fs:3.8rem;
+
+
+        // --h3-fs: 4rem;
+
+
+        // --body64-fs: 4.4rem;
+
+        // --body100-fs:6.5rem;
+
+
+
+        --gap: 30px; 
+    }
+    @media (max-width: $xs-max) {
+
+        --textBig-fs: 10rem;
+
+        --body48-fs:2.8rem;
+
+        --paging-fs: 5.3rem;
+
+        --paging-small-fs: 2.8rem;
+
+        --h1-fs: 6rem;
+
+        --h2-fs: 4rem;
+
+        --h4-fs: 2.5rem;
+
+
+        --body16-fs: 1.2rem;
+
+        --body14-fs: 1rem;
+
+
+        --body18-fs: 1.4rem;
+
+        --body22-fs: 1.8rem;
+
+        --body20-fs: 1.6rem;
+
+        --body25-fs: 2.1rem;
+
+        --body30-fs: 2.6rem;
+
+        --body35-fs:3rem;
+
+        
+            // --body48-fs:1rem;
+
+        --gap: 30px; 
+
+    }
+}

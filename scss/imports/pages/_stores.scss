@@ -1,0 +1,247 @@
+.storespage {
+    .banner {
+        background-image: url(../img/stores/stores.jpg);
+        @include bg;
+        width: 100%;
+        position: relative;
+        height: 100vh;
+
+        &__title {
+            @include mid;
+            text-align: center;
+
+            h2,
+            p {
+                color: $white-cl;
+            }
+        }
+    }
+
+    .stores {
+        .title {
+            text-align: center;
+            padding-top: 90px;
+            position: relative;
+
+            h3 {
+                @include text(var(--body40-fs), 'SE', null, $black-cl, uppercase);
+                letter-spacing: 0.4px;
+            }
+
+            &::after {
+                @include line(100%, 1px, #cccccc);
+                bottom: -15px;
+                left: 0;
+            }
+        }
+
+        .content {
+            padding: 90px 0 120px 0;
+            display: flex;
+
+            &__d {
+                width: 39%;
+
+                &-add {
+                    .head {
+                        padding: 25px 35px 55px;
+                        background: $red-cl;
+
+                        .tab {
+                            position: relative;
+
+                            ul {
+                                display: flex;
+
+                                li {
+                                    a {
+                                        @include text(var(--body35-fs), 'SE', null, $white-cl, uppercase);
+                                        letter-spacing: 0.4px;
+                                        opacity: 0.5;
+                                        @include transition(all .3s);
+                                    }
+                                }
+
+                                .active {
+                                    a {
+                                        opacity: 1;
+                                        @include transition(all .3s);
+                                    }
+                                }
+
+                                .line {
+                                    @include size(3px, 40px);
+                                    background: $white-cl;
+                                    margin: 0 30px 0 20px;
+                                }
+                            }
+
+                            &::after {
+                                @include line(100%, 5px, $white-cl);
+                                bottom: -10px;
+                                left: 0;
+                            }
+                        }
+
+                        .selection {
+                            position: relative;
+                            margin-top: 35px;
+
+                            &__wrap {
+                                position: relative;
+                                width: 100%;
+
+                                &-text {
+                                    cursor: pointer;
+                                    height: 42px;
+                                    @include flex-between;
+                                    position: relative;
+
+                                    span {
+                                        color: $white-cl;
+                                        font-size: var(--body18-fs);
+                                    }
+
+                                    svg {
+                                        filter: invert(100%) sepia(46%) saturate(3325%) hue-rotate(186deg) brightness(119%) contrast(100%);
+                                    }
+
+                                    &::after {
+                                        @include line(100%, 2px, $white-cl);
+                                        bottom: 0px;
+                                        left: 0;
+                                    }
+                                }
+
+                                &-option {
+                                    @include customscroll;
+                                    width: 100%;
+                                    max-height: 260px;
+                                    overflow-y: scroll;
+                                    position: absolute;
+                                    z-index: 400;
+                                    background: #fff;
+                                    display: none;
+
+                                    .tab {
+                                        padding: 10px;
+                                        border-bottom: 1px solid #ddd;
+                                        cursor: pointer;
+                                        @include transition(all .3s);
+
+                                        &:hover {
+                                            background: #ddd;
+                                            @include transition(all .3s);
+                                        }
+
+                                        span {
+                                            @include text(var(--body16-fs), 'U', null, $black-cl, uppercase);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bot {
+                        padding: 0 25px;
+                        overflow-y: scroll;
+                        @include customscroll;
+                        max-height: 635px;
+                        margin: 20px;
+
+                        &__add {
+                            position: relative;
+                            padding-top: 35px;
+
+                            &-title {
+                                p {
+                                    @include text(var(--body30-fs), 'SE', null, $black-cl, none);
+                                    padding-bottom: 15px;
+                                }
+                            }
+
+                            &-item {
+                                display: flex;
+                                padding: 15px 0;
+
+                                p {
+                                    font-size: var(--body18-fs);
+                                    line-height: initial;
+                                    padding-left: 10px;
+                                }
+
+                                img {
+                                    width: 22px;
+                                }
+                            }
+
+                            &::after {
+                                @include line(100%, 2px, $black-cl);
+                                bottom: 0;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__map {
+                width: 61%;
+
+                iframe {
+                    @include size(100%, 100%);
+                }
+            }
+        }
+    }
+
+    @include sm {
+        .banner {
+            height: 542px;
+        }
+
+        .stores {
+            padding: 0 30px;
+
+            .content {
+                padding: 80px 0 80px 0;
+                flex-direction: column;
+
+                &__d {
+                    width: 100%;
+
+                    &-add {
+                        .head {
+                            .tab {
+                                ul {
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__map {
+                    @include size(100%, 400px);
+                }
+            }
+        }
+    }
+
+    @include xs {
+        .banner {
+            height: 350px;
+        }
+
+        .stores {
+            .content {
+                padding: 60px 0 40px 0;
+
+                &__map {
+                    @include size(100%, 300px);
+                }
+            }
+        }
+    }
+}

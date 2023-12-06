@@ -1,0 +1,74 @@
+.registerpage {
+  --body45-fs: 4.5rem;
+
+  main {
+    padding-bottom: 237px;
+  }
+
+  .row {
+    justify-content: space-between;
+  }
+
+  .banner {
+    background-image: url(../img/register/banner.jpg);
+    @include bg;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+
+    &__title {
+      @include mid;
+      text-align: center;
+
+      h2,
+      p {
+        color: $white-cl;
+      }
+    }
+  }
+
+  .form {
+    &__img {
+      position: relative;
+      height: 0;
+      padding-bottom: 65%;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include mid;
+      }
+    }
+
+    &__text {
+      &-d {
+        h3 {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  @include sm {
+    main {
+      padding-bottom: 150px;
+    }
+
+    .banner {
+      height: 542px;
+    }
+  }
+
+  @include xs {
+    main {
+      padding-bottom: 100px;
+    }
+
+    .banner {
+      height: 350px;
+    }
+  }
+}

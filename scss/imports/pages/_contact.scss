@@ -1,0 +1,158 @@
+.contactpage {
+  --body45-fs: 4.5rem;
+  .banner {
+    background-image: url(../img/contact/banner.jpg);
+    @include bg;
+    width: 100%;
+    position: relative;
+    height: 642px;
+    &__title {
+      @include mid;
+      text-align: center;
+      h2,
+      p {
+        color: $white-cl;
+      }
+    }
+  }
+
+  .content {
+    --pt: 120px;
+    padding: 140px 0;
+    &__text {
+      letter-spacing: 0.4px;
+      position: relative;
+      padding-top: 85px;
+      @include text(var(--h4-fs), "SE", initial, $black-cl, none);
+      h3 {
+        font-size: var(--body45-fs);
+        position: relative;
+        padding: var(--pt) 0 35px 0;
+        &::after {
+          @include line(100%, 1px, $black-cl);
+          bottom: 0;
+          left: 0;
+        }
+      }
+      &-info {
+        li {
+          padding: 20px 0;
+          @include text(var(--body30-fs), "SE", null, $black-cl, none);
+        }
+      }
+      &::before {
+        @include line(100%, 6px, $black-cl);
+        right: calc(75% + 3rem);
+        top: 40px;
+      }
+    }
+    &__img {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 60%;
+      cursor: pointer;
+      img {
+        min-height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        @include mid;
+        object-fit: cover;
+      }
+    }
+    @include sm {
+      padding: 80px 0;
+      &__img {
+        padding-bottom: 100%;
+      }
+    }
+  }
+
+  @include sm{
+    --body45-fs: 4rem;
+    .banner {
+      height: 542px;
+    }
+    .content{
+      --pt: 100px;
+        padding: 80px 0;
+        &__text{
+          &-info{
+            li{
+              padding: 15px 0;
+            }
+          }
+        }
+    }
+  }
+  @include xs{
+    --body45-fs: 3.7rem;
+    .content{
+      --pt: 65px;
+        padding: 50px 0;
+        &__text{
+          &-info{
+            li{
+              padding: 10px 0;
+            }
+          }
+        }
+    }
+    .banner {
+      height: 350px;
+    }
+  }
+}
+.form {
+  padding: 70px 0 90px;
+  &__img {
+    @include img;
+    width: 100%;
+  }
+  &__text {
+    &-d {
+      h3 {
+        letter-spacing: 0.4px;
+        padding-bottom: 35px;
+        position: relative;
+        @include text(var(--body45-fs), "SE", initial, $black-cl, none);
+        &::after {
+          @include line(100%, 1px, $black-cl);
+          bottom: 0;
+          left: 0;
+        }
+      }
+      p {
+        padding-top: 50px;
+        @include text(var(--body30-fs), "SE", null, $black-cl, none);
+      }
+    }
+    &-form {
+      padding-top: 15px;
+      input,
+      textarea {
+        border: none;
+        margin-top: 55px;
+        background: transparent;
+        border-bottom: 2px solid #000;
+        resize: none;
+        width: 100%;
+        outline: none;
+        padding-bottom: 15px;
+        letter-spacing: 0.4px;
+      }
+    }
+    &-btn {
+      padding-top: 58px;
+    }
+  }
+  @include sm {
+    .row {
+      flex-direction: column-reverse;
+    }
+    &__text {
+      padding-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,272 @@
+.productDetailpage {
+    --number-fs: 7rem;
+
+    main {
+        padding-top: 0;
+    }
+
+    .banner {
+        background-image: url(../img/productDetail/banner-1.jpg);
+        @include bg;
+        width: 100%;
+        position: relative;
+        height: 700px;
+
+        &__moto {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -50px;
+
+            img {
+                width: 100%;
+                display: none;
+            }
+
+            &.--abs {
+                position: absolute;
+            }
+
+            .active {
+                display: block;
+            }
+        }
+    }
+
+    .changColor {
+        ul {
+            @include mid(true);
+            padding: 58px 75px;
+
+            li {
+                cursor: pointer;
+                @include size(50px, 50px);
+                margin: 0 9.5px;
+
+                &.--white {
+                    border: 1px solid rgb(15, 14, 14);
+                }
+            }
+
+            .active {
+                border: 3px solid #a7a7a7;
+            }
+        }
+    }
+
+    .title {
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+
+        h1 {
+            @include text(var(--h1-fs), 'DB', null, $black-cl, uppercase);
+        }
+
+        &__desc {
+            padding-bottom: 70px;
+
+            p {
+                padding-top: 30px;
+                @include text(var(--body22-fs), null, initial, $black-cl, none);
+            }
+        }
+
+        &::after {
+            @include line(68px, 2px, $black-cl);
+            bottom: 0;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+    }
+
+    // kymco
+    .kymco {
+        &__title {
+            text-align: center;
+        }
+
+        .wrap {
+            padding-top: 70px;
+        }
+
+        &__content {
+            h4 {
+                @include text(var(--h4-fs), 'SE', null, $black-cl, uppercase)
+            }
+
+            &-paging {
+                padding-bottom: 20px;
+
+                span {
+                    opacity: 0.4;
+                    @include text(var(--paging-small-fs), 'DB', null, $black-cl, none);
+                }
+
+                .number {
+                    font-size: var(--paging-fs);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &::after {
+            top: 260px;
+        }
+    }
+
+    @include sm {
+        --number-fs: 6rem;
+
+        .banner {
+            height: 500px;
+        }
+
+        .changColor {
+            ul {
+                li {
+                    @include size(45px, 45px);
+                }
+            }
+        }
+    }
+
+    @include xs {
+        --number-fs: 5rem;
+
+        .changColor {
+            ul {
+                li {
+                    @include size(40px, 40px);
+                }
+            }
+        }
+
+        .banner {
+            height: 400px;
+        }
+    }
+
+}
+
+// motoDetail
+.motoDetail {
+    --pt: 33px;
+
+    &__price {
+        text-align: center;
+        padding: 47px 0 117px 0;
+
+        &-text {
+            p {
+                @include text(var(--h4-fs), 'SE', null, $black-cl, uppercase);
+            }
+
+            span {
+                @include text(var(--number-fs), 'SE', null, $black-cl, uppercase);
+            }
+        }
+    }
+
+    &__d {
+        &-img {
+            img {
+                @include img;
+            }
+        }
+
+        &-accodion {
+            .tab {
+                padding-top: var(--pt);
+
+                &__item {
+                    .head {
+                        display: flex;
+                        align-items: end;
+                        justify-content: space-between;
+                        padding: 17px 0;
+                        cursor: pointer;
+
+                        .text {
+                            white-space: nowrap;
+
+                            h4 {
+                                @include text(var(--h4-fs), 'SE', null, $black-cl, uppercase);
+                                margin-right: 25px;
+                                letter-spacing: 0.4px;
+                            }
+                        }
+
+                        .plus {
+                            position: relative;
+                            cursor: pointer;
+                            @include size(30px, 30px);
+                            top: 15px;
+
+                            &::before {
+                                @include line(30px, 6px, $black-cl);
+                                @include mid;
+
+                            }
+
+                            &::after {
+                                @include line(6px, 30px, $black-cl);
+                                @include mid;
+                                @include transition(all .4s);
+                            }
+
+                            @include xs {
+                                @include size(28px, 28px);
+
+                                &::before {
+                                    @include size(28px, 5px);
+                                }
+
+                                &::after {
+                                    @include size(5px, 28px);
+                                }
+                            }
+                        }
+
+                        .line {
+                            background: $black-cl;
+                            height: 2px;
+                            width: 100%;
+                            margin-right: 30px;
+
+                            @include xs {
+                                height: 1px;
+                            }
+                        }
+                    }
+
+                    .active {
+                        .plus {
+                            &::after {
+                                @include transform(rotate(90deg) translateY(3px));
+                                @include transition(all .4s);
+                                top: 0;
+                            }
+                        }
+                    }
+
+                    .content {
+                        padding: 25px 0;
+                        margin: 0;
+
+                        ul {
+                            @include flex-between;
+                            text-align: left;
+
+                            li {
+                                padding: 8px 0;
+                                @include text(var(--body18-fs), 'U', null, $black-cl, none);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

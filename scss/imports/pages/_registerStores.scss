@@ -1,0 +1,49 @@
+.registerStorespage {
+    .post {
+        .mail {
+            position: relative;
+            width: 100%;
+            margin-top: 55px;
+
+            .text {
+                @include flex-between;
+                cursor: pointer;
+                height: 43.3px;
+                border-bottom: 2px solid #000;
+            }
+
+            .list-tab {
+                width: 100%;
+                max-height: 260px;
+                position: absolute;
+                z-index: 400;
+                background: #fff;
+                display: none;
+
+                .tab {
+                    padding: 15px 10px;
+                    border-bottom: 1px solid #ddd;
+                    cursor: pointer;
+                    @include transition(all .3s);
+
+                    &:hover {
+                        background-color: #ddd;
+                        @include transition(all .3s);
+                    }
+                }
+            }
+        }
+    }
+
+    .form__text-btn {
+        text-align: center;
+    }
+
+    .form__text-d {
+        text-align: center;
+
+        p {
+            font-size: var(--body30-fs);
+        }
+    }
+}

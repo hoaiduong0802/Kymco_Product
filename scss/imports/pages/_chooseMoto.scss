@@ -1,0 +1,127 @@
+.chooseMotopage{
+    main{
+        padding-top: 0;
+    }
+	&::-webkit-scrollbar {
+        display:none;	
+    }
+	&::-webkit-scrollbar-track {
+        display:none;	
+	}
+	&::-webkit-scrollbar-thumb {
+        display:none;	
+	}  
+    header{
+        display: none;
+    }
+    .modalClose{
+        @include size(120px, 120px);
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        @include br(50%);
+        background: rgba(244,53,44,0);
+        @include transition(all .8s);
+        top: 10px;
+        right: 10px;
+        img{
+            margin: auto;
+            inset: 0;
+            position: absolute;
+            z-index: 12;
+        }
+        &::before{
+            @include line(75%, 75%, rgba(244,53,44,0.7));
+            @include br(50%);
+            margin: auto;
+            inset: 0;
+            position: absolute;
+            z-index: 11;
+            @include transform(scale(1));
+            @include transition(all .3s);
+        }
+        &::after{
+            @include line(100%, 100%, rgba(244,53,44,0.6));
+            @include br(50%);
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            z-index: 11;
+            @include transform(scale(1));
+            @include transition(all .8s);
+        }
+        &:hover{
+            background: rgba(244,53,44,0.6);
+            @include transition(all .8s);
+            &::before{
+                @include transform(scale(0.9));
+                @include transition(all .3s);
+            }
+            &::after{
+                @include transform(scale(1.2));
+                @include transition(all .8s);
+                background: rgba(244,53,44,0);
+            }
+        }
+    }
+    .chooseMoto-1{
+        background-image: url(../img/home/chooseMoto-1.jpg);
+        @include bg;
+        position: relative;
+        height: 500px;
+    }
+    .chooseMoto-2{
+        background-image: url(../img/home/chooseMoto-2.jpg);
+        @include bg;
+        position: relative;
+        height: 500px;
+    }
+    .chooseMoto-3{
+        background-image: url(../img/home/chooseMoto-3.jpg);
+        @include bg;
+        position: relative;
+        height: 500px;
+    }
+    .background{
+        margin-top: 0;
+        &__content{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0;
+            h2, p{
+                &.--white{
+                    color: $white-cl;
+                }
+            }
+            h2{
+                font-size: var(--h1-fs);
+            }
+            p{
+                font-size: var(--body30-fs);
+                font-family: 'SE';
+            }
+        }
+    }
+
+    @include sm{
+        header{
+            display: block;
+        }
+        .modalClose{
+            @include size(100px, 100px);
+            top: 70px;
+            right: 15px;
+        }
+    }
+    @include xs{
+        .modalClose{
+            @include size(100px, 100px);
+            top: 90px;
+            right: 15px;
+        }
+        header{
+            display: block;
+        }
+    }
+}

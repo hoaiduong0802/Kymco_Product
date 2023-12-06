@@ -1,0 +1,34 @@
+.networkpage{
+    .banner{
+        @include bg;
+        background-image: url(../img/network/banner.jpg);
+        height:642px;
+        --title-fs: 7rem;
+        position: relative;
+        &__title{
+            @include mid;
+            text-align: center;
+            h2{
+                @include text(var(--title-fs), 'SE', null, $white-cl, uppercase);
+                letter-spacing:0.4px;
+            }
+            p{
+                @include text(var(--body25-fs), 'U', initial, $white-cl, none);
+                padding-top: 25px;
+            }
+        }
+        @include sm{
+            height:542px;
+            --title-fs: 6rem;
+        }
+        @include xs{
+            --title-fs: 5rem;
+            height:350px;
+            &__title{
+                p{
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+}
